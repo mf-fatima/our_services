@@ -11,7 +11,29 @@
       --primary-hover: #822fa8;
     }
 
-    /* Prevent scrolling */
+    /* Fade-in animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .fade-in.delay-1 { animation-delay: 0.3s; }
+    .fade-in.delay-2 { animation-delay: 0.6s; }
+    .fade-in.delay-3 { animation-delay: 0.9s; }
+    .fade-in.delay-4 { animation-delay: 1.2s; }
+    .fade-in.delay-5 { animation-delay: 1.5s; }
+
     html, body {
       height: 100%;
       overflow: hidden;
@@ -20,43 +42,84 @@
 </head>
 <body class="bg-white text-gray-800 font-sans flex flex-col justify-center items-center h-screen">
 
-  <!-- Page Content (Fixed Layout) -->
+  <!-- Page Content -->
   <div class="max-w-6xl w-full px-6 grid md:grid-cols-2 gap-10 items-center">
 
     <!-- Left: Text Content -->
-    <div class="text-center md:text-left">
-      <h1 class="text-3xl md:text-4xl font-semibold text-black mb-4">
+    <div class="text-center md:text-left fade-in delay-1 relative">
+      <h1 class="text-4xl md:text-5xl font-bold text-[var(--primary-color)] mb-4">
         Web Development
       </h1>
-      <p class="text-gray-900 leading-relaxed mb-8">
+      <p class="text-gray-800 text-lg leading-relaxed mb-8 fade-in delay-2">
         Transform your ideas into powerful, high-performing web experiences built to scale.
         Our web development process blends creativity and engineering excellence.
         We build responsive, secure, and optimized websites tailored to your business goals,
         ensuring flawless performance across all devices.
       </p>
 
-      <h3 class="text-2xl font-semibold mb-3 text-gray-900">What We Offer</h3>
-      <ul class="list-disc list-inside text-gray-900 mb-8 space-y-1">
-        <li>Custom Website & Web App Development</li>
-        <li>Frontend & Backend Development</li>
-        <li>eCommerce & CMS Solutions</li>
-        <li>API Integration & Automation</li>
-        <li>Performance & Security Optimization</li>
+      <h3 class="text-2xl font-semibold mb-4 text-gray-900 fade-in delay-3">What We Offer</h3>
+
+      <!-- Custom Tick List -->
+      <ul class="space-y-5 fade-in delay-4">
+        <li class="flex items-center space-x-4">
+          <div class="bg-[var(--primary-color)] w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-gray-900 text-lg">Custom Website & Web App Development</span>
+        </li>
+
+        <li class="flex items-center space-x-4">
+          <div class="bg-[var(--primary-color)] w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-gray-900 text-lg">Frontend & Backend Development</span>
+        </li>
+
+        <li class="flex items-center space-x-4">
+          <div class="bg-[var(--primary-color)] w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-gray-900 text-lg">eCommerce & CMS Solutions</span>
+        </li>
+
+        <li class="flex items-center space-x-4">
+          <div class="bg-[var(--primary-color)] w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-gray-900 text-lg">API Integration & Automation</span>
+        </li>
+
+        <li class="flex items-center space-x-4">
+          <div class="bg-[var(--primary-color)] w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-gray-900 text-lg">Performance & Security Optimization</span>
+        </li>
       </ul>
 
       <!-- Back Button -->
       <a href="services.html"
-         class="inline-block px-8 py-3 bg-[var(--primary-color)] text-white font-medium rounded-full shadow-md hover:bg-[var(--primary-hover)] transition">
+         class="inline-block mt-10 px-8 py-3 bg-[var(--primary-color)] text-white font-medium rounded-full shadow-md hover:bg-[var(--primary-hover)] transition fade-in delay-5">
         ← Back to Services
       </a>
     </div>
 
     <!-- Right: Illustration -->
-    <div class="flex justify-center md:justify-end">
+    <div class="flex justify-center md:justify-end fade-in delay-3">
       <img 
         src="images/web_development.png" 
         alt="Web Development Illustration"
-        class="rounded-2xl w-full max-w-md transform hover:scale-105 transition duration-300"
+        class=" w-full max-w-md transform hover:scale-105 transition duration-300 "
       />
     </div>
 

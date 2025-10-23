@@ -3,15 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Services </title>
+  <title>Our Services | ABCDMEDIA LTD</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #9934C1;
+      --primary-hover: #822fa8;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      line-height: 1.7;
+      color: #333;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+    .zoom-in.visible { opacity: 1; transform: scale(1); }
+
+    .pulse-glow {
+      animation: glowPulse 2.5s infinite ease-in-out;
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); }
+      50% { box-shadow: 0 0 35px rgba(255, 255, 255, 0.6); }
+    }
+
+    .icon-circle {
+      width: 80px;
+      height: 80px;
+      background-color: var(--primary-color);
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem auto;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .delay-100 { transition-delay: 0.2s; }
+    .delay-200 { transition-delay: 0.4s; }
+    .delay-300 { transition-delay: 0.6s; }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800">
 
   <!-- Hero Section -->
   <section class="text-center py-20 bg-white shadow-sm">
-    <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Our Services</h1>
-    <p class="mt-4 text-lg text-gray-800 max-w-2xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold text-[var(--primary-color)] zoom-in">
+      Our Services
+    </h1>
+    <p class="mt-4 text-lg text-gray-800 max-w-2xl mx-auto reveal delay-100">
       We provide professional Web Development, Graphic Design, and SEO Optimization services to help your business thrive online.
     </p>
   </section>
@@ -20,39 +78,48 @@
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid md:grid-cols-3 gap-10">
-        
+
         <!-- Web Development -->
-        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition p-8 text-center">
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition p-8 text-center reveal delay-100 overflow-hidden">
+          <div class="icon-circle">
+            <i class="fas fa-code"></i>
+          </div>
           <h3 class="text-2xl font-semibold mb-3">Web Development</h3>
           <p class="text-gray-600 mb-6">
             Build responsive, modern, and scalable websites that leave a lasting impression.
           </p>
           <a href="web_development.html" 
-             class="inline-block px-6 py-3 bg-[#9934C1] text-white font-medium rounded-full hover:bg-[#822fa8] transition">
+             class="inline-block px-6 py-3 bg-[var(--primary-color)] text-white font-medium rounded-full hover:bg-[var(--primary-hover)] transition pulse-glow">
             Learn More →
           </a>
         </div>
 
         <!-- Graphic Design -->
-        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition p-8 text-center">
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition p-8 text-center reveal delay-200 overflow-hidden">
+          <div class="icon-circle">
+            <i class="fa-solid fa-paintbrush"></i>
+          </div>
           <h3 class="text-2xl font-semibold mb-3">Graphic Design</h3>
           <p class="text-gray-600 mb-6">
             Creative visuals and branding that communicate your story and engage your audience.
           </p>
           <a href="graphic_design.html" 
-             class="inline-block px-6 py-3 bg-[#9934C1] text-white font-medium rounded-full hover:bg-[#822fa8] transition">
+             class="inline-block px-6 py-3 bg-[var(--primary-color)] text-white font-medium rounded-full hover:bg-[var(--primary-hover)] transition pulse-glow">
             Learn More →
           </a>
         </div>
 
         <!-- SEO Optimization -->
-        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition p-8 text-center">
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition p-8 text-center reveal delay-300 overflow-hidden">
+          <div class="icon-circle">
+            <i class="fas fa-chart-line"></i>
+          </div>
           <h3 class="text-2xl font-semibold mb-3">SEO Optimization</h3>
           <p class="text-gray-600 mb-6">
             Improve search visibility and drive organic growth through effective SEO techniques.
           </p>
           <a href="seo_optimization.html" 
-             class="inline-block px-6 py-3 bg-[#9934C1] text-white font-medium rounded-full hover:bg-[#822fa8] transition">
+             class="inline-block px-6 py-3 bg-[var(--primary-color)] text-white font-medium rounded-full hover:bg-[var(--primary-hover)] transition pulse-glow">
             Learn More →
           </a>
         </div>
@@ -60,6 +127,37 @@
       </div>
     </div>
   </section>
+
+  <!-- Back to About Us CTA Section -->
+  <section class="py-24 bg-gradient-to-r from-[var(--primary-color)] to-[#822fa8] text-white text-center relative overflow-hidden reveal delay-200">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521790361543-f645cf042ec4?fm=jpg&q=80&w=2000')] bg-cover bg-center opacity-10"></div>
+    <div class="relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold mb-5">Want to Know More About Us?</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">
+        Discover our story, our mission, and the creative minds behind every project at 
+        <span class="font-semibold">ABCDMEDIA LTD</span>.
+      </p>
+      <a id="aboutLink"
+         class="inline-block px-10 py-4 bg-white text-[var(--primary-color)] font-semibold rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105 pulse-glow">
+         ← Back to About Us
+      </a>
+    </div>
+  </section>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal, .zoom-in').forEach(el => observer.observe(el));
+
+    // Dynamically set About Us link
+    const basePath = window.location.origin;
+    document.getElementById("aboutLink").href = `${basePath}/about_us.html`;
+  </script>
 
 </body>
 </html>
